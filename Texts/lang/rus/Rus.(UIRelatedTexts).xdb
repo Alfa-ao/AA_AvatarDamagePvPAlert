@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIRelatedTexts>
+	<items>
+		<Item>
+			<name>ALERT_TEMPLATE</name>
+			<resource href="ALERT_TEMPLATE.txt"/>
+		</Item>
+		<Item>
+			<name>TEXT_ALERT1</name>
+			<resource href="1.txt"/>
+		</Item>
+		<Item>
+			<name>TEXT_ALERT2</name>
+			<resource href="2.txt"/>
+		</Item>
+	</items>
+</UIRelatedTexts>

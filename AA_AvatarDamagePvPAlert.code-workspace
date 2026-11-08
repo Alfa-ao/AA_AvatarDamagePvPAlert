@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "Z:/AllodsLogs/"
+		}
+	],
+	"settings": {
+		"files.autoGuessEncoding": true,
+		"Lua.diagnostics.disable": [
+			"undefined-global",
+			"undefined-field",
+			"lowercase-global",
+			"undefined-doc-name"
+		],
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

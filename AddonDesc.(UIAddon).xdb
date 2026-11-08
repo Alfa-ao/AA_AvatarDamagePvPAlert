@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIAddon>
+    <Name>AA_AvatarDamagePvPAlert</Name>
+    <Form href="Widgets/Main.(WidgetForm).xdb" />
+    <userAddonInfo>
+        <name href="AddonName.txt" />
+        <description href="AddonDescription.txt" />
+        <author>Alfa-ao</author>
+        <version>1.0.0</version>
+        <apiVersion>18000000</apiVersion>
+        <useCommonScripts>true</useCommonScripts>
+    </userAddonInfo>
+    <ScriptFileRefs>
+        <Item href="Scripts/ClassDamageAlert.lua" />
+        <Item href="Scripts/Main.lua" />
+    </ScriptFileRefs>
+    <textsGroups>
+		<Item>
+            <groupName>rus</groupName>
+            <texts href="Texts/lang/rus/Rus.(UIRelatedTexts).xdb" />
+        </Item>
+        <Item>
+            <groupName>eng</groupName>
+            <texts href="Texts/lang/eng/Eng.(UIRelatedTexts).xdb" />
+        </Item>
+    </textsGroups>
+    <styleSheets>
+        <Item href="Widgets/Styles.(WidgetCss).xdb" />
+    </styleSheets>
+</UIAddon>

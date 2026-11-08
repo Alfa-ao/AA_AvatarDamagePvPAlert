@@ -1,0 +1,17 @@
+[*.{lua,xdb}]
+charset = utf-8
+
+[*.txt]
+charset = utf-16le
+
+# Переопределение для конкретного файла
+[AlchemyV2.txt]
+charset = utf-8
+
+[mods.txt]
+# windows1251 (или cp1251)
+charset = windows1251
+
+[AddonBase.lua]
+# windows1251 (или cp1251)
+charset = windows1251

@@ -1,0 +1,20 @@
+{
+    "name": "AA_AvatarDamagePvPAlert",
+    "description": "",
+    "type": "Addon",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfa-ao"
+        }
+    ],
+    "require": {
+        "api": "17.0.01.81",
+        "useCommonScripts": true
+    },
+    "files": {
+        "Scripts/ClassDamageAlert.lua": 10,
+        "Scripts/Main.lua": 0
+    }
+}

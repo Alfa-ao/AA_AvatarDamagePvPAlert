@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetCss>
+    <Id>AvatarDamagePvPAlert</Id>
+    <Selectors>
+        <Item>
+            <Name>alert-red-text</Name>
+            <Items>
+                <Item>
+                    <Key>color</Key>
+                    <Value>0xFFCC1111</Value>
+                </Item>
+            </Items>
+        </Item>
+		<Item>
+            <Name>alert</Name> 
+			<Items>
+				<Item>
+					<Key>fontname</Key>
+					<Value>AllodsFantasy</Value>
+				</Item>
+				<Item>
+					<Key>fontsize</Key>
+					<Value>30</Value>
+				</Item>
+				<Item>
+					<Key>alignx</Key>
+					<Value>center</Value>
+				</Item>
+				<Item>
+					<Key>color</Key>
+					<Value>0xffffe65e</Value>
+				</Item>
+				<Item>
+					<Key>shadow</Key>
+					<Value>2</Value>
+				</Item>
+			</Items>
+		</Item>
+    </Selectors>
+</WidgetCss>

@@ -1,0 +1,6 @@
+*.cmd
+exclude*
+out*.txt
+test
+var_dump.lua
+Backups
