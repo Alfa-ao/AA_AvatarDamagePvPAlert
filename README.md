@@ -13,3 +13,7 @@
 ## Установка
 
 Скачать последний релиз: **[Download](https://github.com/Alfa-ao/AA_AvatarDamagePvPAlert/releases/latest)**
+
+## Список изменений
+
+Лог изменений **[тык](https://github.com/Alfa-ao/AA_AvatarDamagePvPAlert/blob/main/CHANGELOG.md)**

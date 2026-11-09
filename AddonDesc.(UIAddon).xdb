@@ -15,7 +15,7 @@
         <Item href="Scripts/Main.lua" />
     </ScriptFileRefs>
     <textsGroups>
-		<Item>
+        <Item>
             <groupName>rus</groupName>
             <texts href="Texts/lang/rus/Rus.(UIRelatedTexts).xdb" />
         </Item>

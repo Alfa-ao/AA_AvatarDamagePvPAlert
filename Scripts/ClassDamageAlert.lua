@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------------
 -- Длительность этапов эффекта изменения прозрачности уведомления
-local MESSAGE_FADE_IN_TIME_MS = 100
-local MESSAGE_FADE_SOLID_TIME_MS = 4000
-local MESSAGE_FADE_OUT_TIME_MS = 100
+local MESSAGE_FADE_IN_TIME_MS = 200
+local MESSAGE_FADE_SOLID_TIME_MS = 3000
+local MESSAGE_FADE_OUT_TIME_MS = 200
 --------------------------------------------------------------------------------
 -- Цепочка эффектов изменения прозрачности уведомления
 local FADE_EFFECT_SEQUENCE = {
@@ -40,6 +40,7 @@ Class( "DamageAlert", advWidgetObjectMonitor() )
 function DamageAlert:Init()
     self.deferredCallId = false
     self.updateTimerId = false
+    self.start = false
     self.enemies = {}
     
     return advWidgetObjectMonitor.Init( self )
@@ -56,10 +57,6 @@ function DamageAlert:Update()
         self:SetVal( "value", self.object )
         self:PlayFadeEffectSequence( FADE_EFFECT_SEQUENCE )
         
-        if self.deferredCallId then
-            self:CancelDeferredCall( self.deferredCallId )
-        end
-        
         self.deferredCallId = self:DeferredCall( self.Close, CLOSE_DELAY )
     else
         self:ClearValues()
@@ -70,9 +67,14 @@ end
 function DamageAlert:CheckEnemies()
     local currentTime = common.GetMks()
     local hasEnemies = false
+    
+    if self.updateTimerId then
+        self:CancelDeferredCall( self.updateTimerId )
+        self.updateTimerId = false
+    end
 	
-    for sourceId, lastHitTime in pairs( self.enemies ) do
-        if currentTime - lastHitTime > ENEMY_TIMEOUT_MKS then
+    for sourceId, data in pairs( self.enemies ) do
+        if currentTime - data.lastHitTime > ENEMY_TIMEOUT_MKS then
             self.enemies[ sourceId ] = nil
         else
             hasEnemies = true
@@ -83,11 +85,6 @@ function DamageAlert:CheckEnemies()
 	
     if hasEnemies then
         self.updateTimerId = self:DeferredCall( self.CheckEnemies, CHECK_INTERVAL_MS )
-    else
-        if self.updateTimerId then
-            self:CancelDeferredCall( self.updateTimerId )
-            self.updateTimerId = false
-        end
     end
 end
 --------------------------------------------------------------------------------
@@ -96,13 +93,22 @@ function DamageAlert:UpdateNotification()
     local count = table.size( self.enemies )
 	
     if count > 0 then
+        local limit = math.min( 3, count )
+        local i = 1
         local vtFmt = CreateVt {
 			format = GetAddonText( localization, "ALERT_TEMPLATE" ),
             plural_form = GetPluralForm( count ),
             count = count,
 			class1 = "alert-red-text",
+            players = "alert-players-text",
         }
-		
+
+        for _, enemy in pairs( self.enemies ) do
+            vtFmt:SetVal( "player" .. i,  enemy.name )
+            i = i + 1
+            if i > limit then break end
+        end
+        
         self:Assign( vtFmt )
     else
         self:Assign()
@@ -117,7 +123,7 @@ end
 -- Обработка события получения урона
 function DamageAlert:OnUnitDamageReceived( eventData )
     local myId = avatar.GetId()
-    if eventData.target ~= myId then
+    if eventData.target ~= myId or not self.start then
         return
     end
     
@@ -126,8 +132,12 @@ function DamageAlert:OnUnitDamageReceived( eventData )
         return
     end
     
-    if object.IsUnit( sourceId ) and object.IsPlayer( sourceId ) then
-        self.enemies[ sourceId ] = common.GetMks()
+    if object.IsPlayer( sourceId ) then
+        self.enemies[ sourceId ] = {
+            lastHitTime = common.GetMks(),
+            name = object.GetName( sourceId )
+        }
+        
         self:UpdateNotification()
         
         if self.updateTimerId then
@@ -142,9 +152,17 @@ end
 function DamageAlert:OnUpdateCombat( eventData )
     local myId = avatar.GetId()
     
-    if eventData.objectId == myId and not eventData.inCombat then
-        self.enemies = {}
+    if eventData.objectId ~= myId then
+        return
     end
+    
+    if eventData.inCombat then
+        self.start = true
+        return
+    end
+    
+    self.enemies = {}
+    self.start = false
 end
 --------------------------------------------------------------------------------
 function DamageAlert:GetPassiveEventHandlers()

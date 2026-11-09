@@ -2,6 +2,15 @@
 <WidgetCss>
     <Id>AvatarDamagePvPAlert</Id>
     <Selectors>
+		<Item>
+            <Name>alert-players-text</Name>
+            <Items>
+                <Item>
+					<Key>fontsize</Key>
+					<Value>17</Value>
+				</Item>
+            </Items>
+        </Item>
         <Item>
             <Name>alert-red-text</Name>
             <Items>
@@ -20,7 +29,7 @@
 				</Item>
 				<Item>
 					<Key>fontsize</Key>
-					<Value>30</Value>
+					<Value>33</Value>
 				</Item>
 				<Item>
 					<Key>alignx</Key>

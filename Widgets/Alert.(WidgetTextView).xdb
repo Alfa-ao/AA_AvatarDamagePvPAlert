@@ -10,17 +10,21 @@
 		<Y>
 			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_INTERNAL</Sizing>
-			<Pos>250</Pos>
+			<Pos>200</Pos>
 		</Y>
 	</Placement>
-	<TransparentInput>true</TransparentInput>
 	<FormatFileRef href="../Texts/Alert.txt" />
 	<TextStyle>
+		<multiline>true</multiline>
 		<wrapText>false</wrapText>
 		<showClippedSymbol>true</showClippedSymbol>
+		<showClippedLine>false</showClippedLine>
+		<lineSpacing>0</lineSpacing>
+		<ellipsis>true</ellipsis>
 	</TextStyle>
 	<minWidth>100</minWidth>
 	<maxWidth>1200</maxWidth>
 	<!-- <PickChildrenOnly>false</PickChildrenOnly>
 	<TransparentInput>false</TransparentInput> -->
+	<TransparentInput>true</TransparentInput>
 </WidgetTextView>

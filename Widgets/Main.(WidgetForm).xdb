@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <WidgetForm>
 	<Name>AA_AvatarDamagePvPAlert</Name>
-	<Priority>10000</Priority>
+	<Priority>20000</Priority>
 	<Children>
 		<Item href="Alert.(WidgetTextView).xdb" />
 	</Children>
