@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+    <Name>Panel</Name>
+    <Children>
+        <Item href="Alert.(WidgetTextView).xdb" />
+        <Item href="DragResize/DragBottomRight.(WidgetButton).xdb" />
+    </Children>
+    <Placement>
+        <X>
+            <Align>WIDGET_ALIGN_CENTER</Align>
+            <Size>700</Size>
+        </X>
+        <Y>
+            <Align>WIDGET_ALIGN_LOW</Align>
+            <Size>70</Size>
+            <Pos>200</Pos>
+        </Y>
+    </Placement>
+	<PickChildrenOnly>true</PickChildrenOnly>
+</WidgetPanel>

@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <WidgetTextView>
 	<Name>Alert</Name>
-	<Priority>0</Priority>
 	<Placement>
 		<X>
 			<Align>WIDGET_ALIGN_CENTER</Align>
 			<Sizing>WIDGET_SIZING_INTERNAL</Sizing>
 		</X>
 		<Y>
-			<Align>WIDGET_ALIGN_LOW</Align>
+			<Align>WIDGET_ALIGN_CENTER</Align>
 			<Sizing>WIDGET_SIZING_INTERNAL</Sizing>
-			<Pos>200</Pos>
 		</Y>
 	</Placement>
 	<FormatFileRef href="../Texts/Alert.txt" />
 	<TextStyle>
 		<multiline>true</multiline>
 		<wrapText>false</wrapText>
-		<showClippedSymbol>true</showClippedSymbol>
-		<showClippedLine>false</showClippedLine>
-		<lineSpacing>0</lineSpacing>
-		<ellipsis>true</ellipsis>
 	</TextStyle>
 	<minWidth>100</minWidth>
-	<maxWidth>1200</maxWidth>
-	<!-- <PickChildrenOnly>false</PickChildrenOnly>
-	<TransparentInput>false</TransparentInput> -->
+	<maxWidth>700</maxWidth>
 	<TransparentInput>true</TransparentInput>
 </WidgetTextView>

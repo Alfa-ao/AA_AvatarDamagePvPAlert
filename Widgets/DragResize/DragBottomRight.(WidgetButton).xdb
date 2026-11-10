@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetButton>
+    <Name>DragBottomRight</Name>
+    <Placement>
+        <X>
+            <Align>WIDGET_ALIGN_HIGH</Align>
+            <HighPos>4</HighPos>
+            <Pos>4</Pos>
+            <Size>16</Size>
+        </X>
+        <Y>
+            <Align>WIDGET_ALIGN_HIGH</Align>
+            <HighPos>5</HighPos>
+            <Pos>5</Pos>
+            <Size>16</Size>
+        </Y>
+    </Placement>
+    <Variants>
+        <Item>
+            <LayerHighlight href="../../Textures/DragResize/Highlight.(WidgetLayerSimpleTexture).xdb"/>
+            <StateNormal>
+                <LayerMain href="../../Textures/DragResize/Normal.(WidgetLayerSimpleTexture).xdb"/>
+            </StateNormal>
+            <StatePushed>
+                <LayerMain href="../../Textures/DragResize/Pushed.(WidgetLayerSimpleTexture).xdb"/>
+            </StatePushed>
+        </Item>
+    </Variants>
+</WidgetButton>

@@ -6,11 +6,12 @@
         <name href="AddonName.txt" />
         <description href="AddonDescription.txt" />
         <author>Alfa-ao</author>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <apiVersion>18000000</apiVersion>
         <useCommonScripts>true</useCommonScripts>
     </userAddonInfo>
     <ScriptFileRefs>
+        <Item href="Packages/Alfa-ao/DnDManager/src/DnDManager.lua" />
         <Item href="Scripts/ClassDamageAlert.lua" />
         <Item href="Scripts/Main.lua" />
     </ScriptFileRefs>

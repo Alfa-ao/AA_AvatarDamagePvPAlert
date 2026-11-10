@@ -1,4 +1,7 @@
-DamageAlert( mainForm.wtAlert ):Init()
+DamageAlert( mainForm.wtPanel.wtAlert ):Init()
 
---DnDManager:Init()
---DnDManager:Register( mainForm.wtAlert, { kbFlag = KBF_CTRL, saveToConfig = true } )
+DnDManager:Init()
+DnDManager:Register( mainForm.wtPanel, {
+    wtReacting = mainForm.wtPanel.wtDragBottomRight,
+    saveToConfig = true,
+} )

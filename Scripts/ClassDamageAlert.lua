@@ -15,11 +15,8 @@ local FADE_EFFECT_SEQUENCE = {
 local FADE_EFFECT_TIME = MESSAGE_FADE_IN_TIME_MS + MESSAGE_FADE_SOLID_TIME_MS + MESSAGE_FADE_OUT_TIME_MS
 local CLOSE_DELAY = FADE_EFFECT_TIME + 100
 --------------------------------------------------------------------------------
--- Таймаут удаления противника из списка в микросекундах
-local ENEMY_TIMEOUT_MKS = 3000000
---------------------------------------------------------------------------------
 -- Интервал проверки списка противников в миллисекундах
-local CHECK_INTERVAL_MS = 500
+local CHECK_INTERVAL_MS = 100
 --------------------------------------------------------------------------------
 local localization = common.GetLocalization()
 --------------------------------------------------------------------------------
@@ -74,7 +71,7 @@ function DamageAlert:CheckEnemies()
     end
 	
     for sourceId, data in pairs( self.enemies ) do
-        if currentTime - data.lastHitTime > ENEMY_TIMEOUT_MKS then
+        if currentTime - data.lastHitTime > ( FADE_EFFECT_TIME * 1000 ) then
             self.enemies[ sourceId ] = nil
         else
             hasEnemies = true

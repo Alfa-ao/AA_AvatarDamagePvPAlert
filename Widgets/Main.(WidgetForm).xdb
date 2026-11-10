@@ -3,7 +3,7 @@
 	<Name>AA_AvatarDamagePvPAlert</Name>
 	<Priority>20000</Priority>
 	<Children>
-		<Item href="Alert.(WidgetTextView).xdb" />
+		<Item href="Panel.(WidgetPanel).xdb" />
 	</Children>
 	<Placement>
 		<X>
@@ -13,6 +13,5 @@
 			<Align>WIDGET_ALIGN_BOTH</Align>
 		</Y>
 	</Placement>
-	<TransparentInput>false</TransparentInput>
 	<PickChildrenOnly>true</PickChildrenOnly>
 </WidgetForm>
